@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "9000:80"
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+volumes:
+  dbdata:  
